@@ -1,7 +1,6 @@
 package com.github.lvcn.jsboot.common.utils.crypto.codec.old;
 
 import com.github.lvcn.jsboot.common.utils.crypto.CryptoConstants;
-import sun.misc.CEStreamExhausted;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -39,7 +38,7 @@ public abstract class Base64OldCharacterDecoder {
     }
 
     protected void decodeAtom(PushbackInputStream var1, OutputStream var2, int var3) throws IOException {
-        throw new CEStreamExhausted();
+        throw new IOException();
     }
 
     protected int readFully(InputStream var1, byte[] var2, int var3, int var4) throws IOException {
@@ -79,7 +78,7 @@ public abstract class Base64OldCharacterDecoder {
                 }
 
                 this.decodeLineSuffix(var5, var2);
-            } catch (CEStreamExhausted var8) {
+            } catch (IOException var8) {
                 this.decodeBufferSuffix(var5, var2);
                 return;
             }

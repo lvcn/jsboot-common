@@ -17,6 +17,7 @@
     <properties>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+        <javadoc.skip>true</javadoc.skip>
         <jsboot-common>0.0.1</jsboot-common>
         <!-- version -->
         <java.version>1.8</java.version>
@@ -52,6 +53,13 @@
         </developer>
     </developers>
 
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
     <scm>
         <connection>scm:git@github.com:lvcn/jsboot-common.git</connection>
         <developerConnection>scm:git@github.com:lvcn/jsboot-common.git</developerConnection>
@@ -82,6 +90,16 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <skip>${javadoc.skip}</skip>
+                    <show>public</show>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <links>
+                        <link>http://docs.oracle.com/javase/6/docs/api</link>
+                    </links>
+                </configuration>
             </plugin>
         </plugins>
     </build>

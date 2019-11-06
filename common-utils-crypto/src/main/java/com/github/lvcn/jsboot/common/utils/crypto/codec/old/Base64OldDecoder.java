@@ -1,7 +1,5 @@
 package com.github.lvcn.jsboot.common.utils.crypto.codec.old;
 
-import sun.misc.CEFormatException;
-import sun.misc.CEStreamExhausted;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -35,20 +33,20 @@ public class Base64OldDecoder extends Base64OldCharacterDecoder {
         byte var7 = -1;
         byte var8 = -1;
         if (var3 < 2) {
-            throw new CEFormatException("BASE64Decoder: Not enough bytes for an atom.");
+            throw new IOException("BASE64Decoder: Not enough bytes for an atom.");
         } else {
             int var4;
             do {
                 var4 = var1.read();
                 if (var4 == -1) {
-                    throw new CEStreamExhausted();
+                    throw new IOException();
                 }
             } while (var4 == 10 || var4 == 13);
 
             this.decode_buffer[0] = (byte) var4;
             var4 = this.readFully(var1, this.decode_buffer, 1, var3 - 1);
             if (var4 == -1) {
-                throw new CEStreamExhausted();
+                throw new IOException();
             } else {
                 if (var3 > 3 && this.decode_buffer[3] == 61) {
                     var3 = 3;

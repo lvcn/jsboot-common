@@ -5,7 +5,6 @@ import com.github.lvcn.jsboot.common.utils.crypto.hash.HashModelEnum;
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 
 /**
  * 基础hash
@@ -17,39 +16,28 @@ public class CryptoUtil {
     /**
      * 返回小写16进制的hash
      *
-     * @param model
-     * @param str
-     * @return
+     * @param model 模式
+     * @param data  数据
+     * @return hash
      */
-    public static String encodeHex(HashModelEnum model, String str) {
-        return byteArrayToHexString(encode(model.getCode(), str));
-    }
-
-    /**
-     * 返回base64的hash
-     *
-     * @param model
-     * @param str
-     * @return
-     */
-    public static String encodeBase64(HashModelEnum model, String str) {
-        return byteArrayToBase64String(encode(model.getCode(), str));
+    public static String encodeHex(HashModelEnum model, String data) {
+        return byteArrayToHexString(encode(model.getCode(), data));
     }
 
 
     /**
      * 获得hash后的字节数组
      *
-     * @param code
-     * @param str
-     * @return
+     * @param code 模式
+     * @param data
+     * @return hash
      */
-    private static byte[] encode(String code, String str) {
+    private static byte[] encode(String code, String data) {
         if (code == null) {
             return null;
         }
         try {
-            return MessageDigest.getInstance(code).digest(str.getBytes(CryptoConstants.DEF_CHARSET));
+            return MessageDigest.getInstance(code).digest(data.getBytes(CryptoConstants.DEF_CHARSET));
         } catch (NoSuchAlgorithmException e) {
             //理论不应该出现的异常(NoSuchAlgorithmException),如果出现直接捕获返回Null
             return null;
@@ -59,39 +47,10 @@ public class CryptoUtil {
     /**
      * byte[] 转16进制(默认返回小写)
      *
-     * @param byteArray
-     * @return
+     * @param byteArray 数据
+     * @return hex16
      */
     public static String byteArrayToHexString(byte[] byteArray) {
         return DatatypeConverter.printHexBinary(byteArray).toLowerCase();
-    }
-
-
-    /**
-     * 字符串转base(jdk8util无换行符模式)
-     *
-     * @param str
-     * @return
-     */
-    public static String stringToBase64(String str) {
-        if (str == null) {
-            return "";
-        }
-        try {
-            return byteArrayToBase64String(str.getBytes(CryptoConstants.DEF_CHARSET));
-        } catch (Exception e) {
-            //理论不应该出现的异常(UnsupportedEncodingException),如果出现直接捕获返回Null
-            return null;
-        }
-    }
-
-    /**
-     * byte[] 转base64(jdk8util无换行符模式)
-     *
-     * @param byteArray
-     * @return
-     */
-    public static String byteArrayToBase64String(byte[] byteArray) {
-        return Base64.getEncoder().encodeToString(byteArray);
     }
 }
