@@ -11,7 +11,6 @@ import java.util.Base64;
  * base64工具类-提供不换行和76换行两种标准模式的编解码
  *
  * @author lv_cn
- * @date 2019/10/30 16:12
  */
 public class Base64Util {
     /**
@@ -69,7 +68,7 @@ public class Base64Util {
      *
      * @param data    数据
      * @param lineSep 是否换行（不推荐使用）
-     * @return
+     * @return str
      */
     public static String decode(String data, boolean lineSep) {
         byte[] byteArray = decodeToByteArray(data, lineSep);
@@ -84,7 +83,7 @@ public class Base64Util {
      *
      * @param data    数据
      * @param lineSep 是否换行（不推荐使用）
-     * @return
+     * @return byte
      */
     public static byte[] decodeToByteArray(String data, boolean lineSep) {
         if (data == null) {

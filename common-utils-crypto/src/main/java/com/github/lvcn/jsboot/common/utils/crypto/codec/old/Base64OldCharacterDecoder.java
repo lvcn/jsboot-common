@@ -14,7 +14,6 @@ import java.nio.ByteBuffer;
  * 不推荐使用:base64旧版编码,则每76个字符一个换行符 sun.misc.BASE64Decoder
  *
  * @author lv_cn
- * @date 2019/11/6 14:06
  */
 public abstract class Base64OldCharacterDecoder {
     public Base64OldCharacterDecoder() {

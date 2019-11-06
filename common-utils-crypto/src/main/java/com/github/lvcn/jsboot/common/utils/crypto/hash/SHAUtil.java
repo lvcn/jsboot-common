@@ -6,7 +6,6 @@ import com.github.lvcn.jsboot.common.utils.crypto.CryptoUtil;
  * sha工具类
  *
  * @author lv_cn
- * @date 2019/10/30 13:41
  */
 public class SHAUtil {
     /**

@@ -4,7 +4,6 @@ package com.github.lvcn.jsboot.common.utils.crypto.hash;
  * hash模式配置
  *
  * @author lv_cn
- * @date 2019/11/5 9:38
  */
 public enum HashModelEnum {
     MD5("MD5"),

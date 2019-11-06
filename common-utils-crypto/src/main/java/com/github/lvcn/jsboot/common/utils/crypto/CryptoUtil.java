@@ -10,7 +10,6 @@ import java.security.NoSuchAlgorithmException;
  * 基础hash
  *
  * @author lv_cn
- * @date 2019/10/30 13:42
  */
 public class CryptoUtil {
     /**
@@ -29,7 +28,7 @@ public class CryptoUtil {
      * 获得hash后的字节数组
      *
      * @param code 模式
-     * @param data
+     * @param data 数据
      * @return hash
      */
     private static byte[] encode(String code, String data) {
