@@ -4,21 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.lvcn</groupId>
     <artifactId>jsboot-common</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>pom</packaging>
     <name>jsboot-common</name>
     <description>java web spring boot common</description>
     <url>https://github.com/lvcn/jsboot-common</url>
 
     <modules>
-        <module>common-utils-crypto</module>
+        <module>jsboot-common-utils-core</module>
+        <module>jsboot-common-utils-crypto</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
         <javadoc.skip>false</javadoc.skip>
-        <jsboot-common>0.0.1</jsboot-common>
+        <jsboot-common.version>0.0.2</jsboot-common.version>
         <!-- version -->
         <java.version>1.8</java.version>
         <lombok.version>1.18.4</lombok.version>
@@ -43,6 +44,7 @@
            <groupId>com.alibaba</groupId>
            <artifactId>fastjson</artifactId>
            <version>${fastjson.version}</version>
+           <scope>provided</scope>
        </dependency> -->
     </dependencies>
 
