@@ -50,6 +50,13 @@ public class Aes implements Serializable {
     private Lock lock = new ReentrantLock();
 
     /**
+     * 使用默认模式构造AES/CBC/PKCS5Padding
+     */
+    public Aes(String secretKey, String secretIv) {
+        this(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, secretKey, secretIv);
+    }
+
+    /**
      * 构造
      *
      * @param aesModel   模式

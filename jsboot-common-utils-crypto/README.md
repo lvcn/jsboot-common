@@ -45,17 +45,22 @@ String sha512 = SHAUtil.sha512(DATA);
 
 `支持模式:CBC,ECB,CTR,OFB,CFB,支持补码方式:NoPadding,PKCS5Padding,ZeroPadding,ISO10126Padding`
 ```
+//默认AES/CBC/PKCS5Padding
+Aes aes = new Aes("密钥", "IV");
+AesUtil.encrypt("密钥", "IV", data);
+AesUtil.decrypt("密钥", "IV", aesData);
+
 //最常用的aes模式 AES/CBC/PKCS5Padding
-Aes aes = new Aes(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "秘钥", "IV");
+Aes aes = new Aes(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "密钥", "IV");
 
 //也可以换用其他模式或者补码方式 AES/ECB/ZeroPadding
-Aes aes = new Aes(AesModelEnum.ECB, AesPaddingEnum.ZeroPadding, "秘钥", null);
+Aes aes = new Aes(AesModelEnum.ECB, AesPaddingEnum.ZeroPadding, "密钥", null);
 
-Aes aes = new Aes(AesModelEnum.ECB, AesPaddingEnum.PKCS5Padding, "秘钥", null);
+Aes aes = new Aes(AesModelEnum.ECB, AesPaddingEnum.PKCS5Padding, "密钥", null);
 
 //也提供了一个util直接调用
-AesUtil.encrypt(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "秘钥", "IV", data);
-AesUtil.decrypt(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "秘钥", "IV", aesData);
+AesUtil.encrypt(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "密钥", "IV", data);
+AesUtil.decrypt(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "密钥", "IV", aesData);
 
 ase.encrypt(data);//加密(返回16进制小写密文)
 ase.decrypt(aesData);//解密16进制小写密文
