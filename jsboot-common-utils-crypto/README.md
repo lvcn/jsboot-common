@@ -45,10 +45,10 @@ String sha512 = SHAUtil.sha512(DATA);
 
 `支持模式:CBC,ECB,CTR,OFB,CFB,支持补码方式:NoPadding,PKCS5Padding,ZeroPadding,ISO10126Padding`
 ```
-//默认AES/CBC/PKCS5Padding
-Aes aes = new Aes("密钥", "IV");
-AesUtil.encrypt("密钥", "IV", data);
-AesUtil.decrypt("密钥", "IV", aesData);
+//默认AES/ECB/PKCS5Padding
+Aes aes = new Aes("密钥");
+AesUtil.encrypt("密钥", data);
+AesUtil.decrypt("密钥", aesData);
 
 //最常用的aes模式 AES/CBC/PKCS5Padding
 Aes aes = new Aes(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, "密钥", "IV");

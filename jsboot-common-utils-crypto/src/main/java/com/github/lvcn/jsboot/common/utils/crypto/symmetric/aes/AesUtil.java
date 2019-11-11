@@ -7,15 +7,14 @@ package com.github.lvcn.jsboot.common.utils.crypto.symmetric.aes;
  */
 public class AesUtil {
     /**
-     * 加密默认返回16进制小写密文(默认模式AES/CBC/PKCS5Padding)
+     * 加密默认返回16进制小写密文(默认模式AES/ECB/PKCS5Padding)
      *
      * @param secretKey
-     * @param secretIv
      * @param data
      * @return
      */
-    public static String encrypt(String secretKey, String secretIv, String data) {
-        return new Aes(secretKey, secretIv).encrypt(data);
+    public static String encrypt(String secretKey, String data) {
+        return new Aes(secretKey).encrypt(data);
     }
 
     /**
@@ -52,15 +51,14 @@ public class AesUtil {
 
 
     /**
-     * 解密(16进制小写，默认模式AES/CBC/PKCS5Padding)
+     * 解密(16进制小写，默认模式AES/ECB/PKCS5Padding)
      *
      * @param secretKey
-     * @param secretIv
      * @param data
      * @return
      */
-    public static String decrypt(String secretKey, String secretIv, String data) {
-        return new Aes(secretKey, secretIv).decrypt(data);
+    public static String decrypt(String secretKey, String data) {
+        return new Aes(secretKey).decrypt(data);
     }
 
     /**

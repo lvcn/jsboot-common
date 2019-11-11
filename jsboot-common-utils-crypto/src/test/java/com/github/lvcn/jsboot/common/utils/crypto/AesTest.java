@@ -32,6 +32,14 @@ public class AesTest {
                 "aXEY48f5WQDQI5GYbyFHP6pk0AhNHmxHPPkpo9XE6dQHHUddF4pjgM54xnjeFybNShZlAw3ZHQWljv5q9wcvu/5wQzrMKZEGBNHPqebYbvI=",
                 "aXEY48f5WQDQI5GYbyFHP6pk0AhNHmxHPPkpo9XE6dQHHUddF4pjgM54xnjeFybNShZlAw3ZHQWl\r\njv5q9wcvu/5wQzrMKZEGBNHPqebYbvI="
         );
+
+        //AES/ECB/PKCS5Padding
+        aesChech(new Aes(TEST_KEY),
+                "697118e3c7f95900d02391986f21473faa64d0084d1e6c473cf929a3d5c4e9d4071d475d178a6380ce78c678de1726cd4a1665030dd91d05a58efe6af7072fbbd77afdce48212c0b4722de2f3c418098",
+                "aXEY48f5WQDQI5GYbyFHP6pk0AhNHmxHPPkpo9XE6dQHHUddF4pjgM54xnjeFybNShZlAw3ZHQWljv5q9wcvu9d6/c5IISwLRyLeLzxBgJg=",
+                "aXEY48f5WQDQI5GYbyFHP6pk0AhNHmxHPPkpo9XE6dQHHUddF4pjgM54xnjeFybNShZlAw3ZHQWl\r\njv5q9wcvu9d6/c5IISwLRyLeLzxBgJg="
+        );
+
         String aesStr = AesUtil.encrypt(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, TEST_KEY, TEST_IV, TEST_DATA);
         AesUtil.decrypt(AesModelEnum.CBC, AesPaddingEnum.PKCS5Padding, TEST_KEY, TEST_IV, aesStr);
     }
