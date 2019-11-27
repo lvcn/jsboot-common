@@ -1,31 +1,27 @@
-# **基础工具模块**
 <!-- TOC -->
 
-- [**基础工具模块**](#%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7%E6%A8%A1%E5%9D%97)
-  - [1. 介绍](#1-%E4%BB%8B%E7%BB%8D)
-  - [2. 选型](#2-%E9%80%89%E5%9E%8B)
-  - [3. 使用说明](#3-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+- [1. 说明](#1-说明)
+- [2. utils总包](#2-utils总包)
 
 <!-- /TOC -->
+# 1. 说明
+jsBoot公共包,支持JDK8及以上
+# 2. utils总包
+> 文档
+[ utils总包说明文档](jsboot-common-utils/README.md)
 
-## 1. 介绍
-
+> 使用方法
+- Maven
+```
+<dependency>
+  <groupId>com.github.lvcn</groupId>
+  <artifactId>jsboot-common-utils</artifactId>
+  <version>0.0.6</version>
+</dependency>
 ```
 
-基础组件模块
-
+- Gradle
 ```
-
-## 2. 选型
- 1. 说明
- 2. 对比
- 3. 优点
- 4. 缺点
- 5. 版本说明
- 6. 注意事项
- 7. 其他说明
-
-## 3. 使用说明
-1. 说明
-2. 注意事项
-3. 其他说明
+compile group: 'com.github.lvcn', name: 'jsboot-common-utils', version: '0.0.6'
+```
+- Jar下载地址(http://repo2.maven.org/maven2/com/github/lvcn/jsboot-common-utils/)
