@@ -108,6 +108,9 @@
     <profiles>
         <profile>
             <id>release</id>
+            <properties>
+                <gpg.keyname>E49C057237EFEE9B</gpg.keyname>
+            </properties>
             <distributionManagement>
                 <snapshotRepository>
                     <id>oss</id>
