@@ -109,7 +109,7 @@
         <profile>
             <id>release</id>
             <properties>
-                <gpg.keyname>E49C057237EFEE9B</gpg.keyname>
+                <gpg.keyname>C3DD07097EBA90B333C70019A0CB3BE551F2B95D</gpg.keyname>
             </properties>
             <distributionManagement>
                 <snapshotRepository>

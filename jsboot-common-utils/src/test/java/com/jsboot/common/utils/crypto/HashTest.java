@@ -7,7 +7,6 @@ import org.junit.Test;
 
 /**
  * @author lv_cn
- * @date 2019/11/5 10:33
  */
 public class HashTest {
     private static final String TEST_DATA = "Test123!@#中文 | 中文#@!321tseT";

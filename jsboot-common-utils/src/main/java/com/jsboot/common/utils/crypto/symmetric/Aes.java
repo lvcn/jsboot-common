@@ -50,6 +50,8 @@ public class Aes implements Serializable {
 
     /**
      * 使用默认模式构造AES/ECB/PKCS5Padding
+     *
+     * @param secretKey 密钥
      */
     public Aes(String secretKey) {
         this(AesModelEnum.ECB, AesPaddingEnum.PKCS5Padding, secretKey, null);
